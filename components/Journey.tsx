@@ -5,7 +5,7 @@ import { Calendar, Award, Code, Lightbulb } from "lucide-react";
 
 const milestones = [
   {
-    year: "2024",
+    year: "2026",
     title: "Advanced AI Integration",
     description:
       "Developed sophisticated AI-powered applications integrating machine learning models with modern web frameworks.",
@@ -13,7 +13,7 @@ const milestones = [
     color: "var(--muted-gold)",
   },
   {
-    year: "2023",
+    year: "2025",
     title: "Full-Stack Mastery",
     description:
       "Expanded expertise across the entire technology stack, from database architecture to elegant frontend experiences.",
@@ -21,7 +21,7 @@ const milestones = [
     color: "var(--warm-sand)",
   },
   {
-    year: "2022",
+    year: "2024",
     title: "Design System Architecture",
     description:
       "Created comprehensive design systems and component libraries, bridging the gap between design and development.",
@@ -29,7 +29,7 @@ const milestones = [
     color: "var(--muted-gold)",
   },
   {
-    year: "2021",
+    year: "2023",
     title: "Beginning the Journey",
     description:
       "Started exploring the intersection of code and creativity, building foundational skills in software development.",

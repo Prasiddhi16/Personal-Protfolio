@@ -1,40 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink,GitBranch} from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
-    title: "AI Content Studio",
+    title: "Waste Sorting Assistant",
     description:
-      "An intelligent content creation platform powered by machine learning, enabling users to generate, refine, and optimize creative content with natural language processing.",
-    tech: ["React", "Python", "FastAPI", "OpenAI"],
-    image: "linear-gradient(135deg, #C6A46C 0%, #3B2B26 100%)",
+      "An AI-powered mobile application that classifies waste materials from images and guides users on how to properly sort and dispose of them , making recycling smarter and sustainability easier.",
+    tech: ["React Native", "Python", "FastAPI", "JavaScript","TypeScript","Machine Learning","PyTorch"],
+    image: "/wastesort.png", // actual screenshot in public/
+    demo: "https://your-demo-link.com", // replace with live demo URL
+    repo: "https://github.com/your-repo-link", // replace with GitHub repo
   },
   {
-    title: "Desktop Task Manager",
+    title: "Smart Bus Route Optimizer",
     description:
-      "A high-performance desktop application built with Qt framework, featuring real-time system monitoring, process management, and elegant data visualization.",
-    tech: ["Python", "Qt", "SQLite", "UI/UX"],
+      "Graph-based system for optimizing urban bus routes, offering shortest distance, minimum stops, or fastest travel time with interactive route maps and user-friendly visualization.",
+    tech: ["C++", "Qt", "SQLite", "UI/UX"],
     image: "linear-gradient(135deg, #D9C2A3 0%, #2A1E1A 100%)",
   },
   {
-    title: "Mobile Design System",
+    title: "Artha AI",
     description:
-      "A comprehensive design system and component library for mobile applications, ensuring consistency and scalability across multiple platforms.",
-    tech: ["React Native", "Figma", "TypeScript", "Storybook"],
+      "Artha AI is an AI-powered personal finance management system that helps users track income, expenses, budgets, and goals. It provides predictive analytics, intelligent alerts, receipt scanning, personalized recommendations, and visual financial reports to transform raw financial data into actionable insights for proactive decision-making.",
+    tech: ["HTML", "Figma", "CSS", "Python","JavaScript"],
     image: "linear-gradient(135deg, #E8D8C3 0%, #3B2B26 100%)",
   },
   {
-    title: "Creative Tools Suite",
+    title: "Bloom",
     description:
-      "An innovative toolkit for digital artists and designers, featuring advanced image manipulation, generative art capabilities, and collaborative workflows.",
-    tech: ["React", "Canvas API", "WebGL", "Machine Learning"],
+      "A playful experiment that turns simple hand gestures into enchanting visual effects.",
+    tech: ["Python", "Media Pipe", "OpenCV"],
+    image: "linear-gradient(135deg, #2A1E1A 0%, #C6A46C 100%)",
+  },
+  {
+    title: "Maze Solver",
+    description:
+      "This project finds a path through a grid-based maze using two classical algorithms. BFS ensures the shortest path by exploring level by level, while DFS explores deeply before backtracking. It demonstrates graph traversal, pathfinding, and data structure applications.",
+    tech: ["JavaScript", "HTML","Python","CSS"],
     image: "linear-gradient(135deg, #2A1E1A 0%, #C6A46C 100%)",
   },
 ];
 
-export function Projects() {
+export  function Projects() {
   return (
     <section
       id="projects"
@@ -46,7 +56,7 @@ export function Projects() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2 }}
           className="text-center mb-20"
         >
           <span
@@ -71,7 +81,7 @@ export function Projects() {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 1.2, delay: index * 0.2 }}
               className="group"
             >
               <div
@@ -87,30 +97,52 @@ export function Projects() {
                     index % 2 === 1 ? "md:order-2" : ""
                   }`}
                 >
-                  <div
-                    className="w-full h-full"
-                    style={{ background: project.image }}
-                  >
-                    <div className="w-full h-full bg-black/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex gap-4">
-                        <motion.button
+                  {project.image.startsWith("/") ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={800}
+                      height={500}
+                     className="object-contain w-full h-full bg-black"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full"
+                      style={{ background: project.image }}
+                    />
+                  )}
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex gap-4">
+                      {project.demo && (
+                        <motion.a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           className="w-12 h-12 rounded-full bg-[var(--cream-beige)]/20 backdrop-blur-md flex items-center justify-center border border-[var(--cream-beige)]/30"
                         >
                           <ExternalLink className="w-5 h-5 text-[var(--cream-beige)]" />
-                        </motion.button>
-                         
-                        <motion.button
+                        </motion.a>
+                      )}
+                      {project.repo && (
+                        <motion.a
+                          href={project.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           className="w-12 h-12 rounded-full bg-[var(--cream-beige)]/20 backdrop-blur-md flex items-center justify-center border border-[var(--cream-beige)]/30"
                         >
-                        <GitBranch className="w-5 h-5 text-[var(--cream-beige)]" />
-                        </motion.button>
-                      </div>
+                          <GitBranch className="w-5 h-5 text-[var(--cream-beige)]" />
+                        </motion.a>
+                      )}
                     </div>
                   </div>
+
+                  {/* Gradient overlay for readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-chocolate)]/50 to-transparent opacity-60" />
                 </motion.div>
 

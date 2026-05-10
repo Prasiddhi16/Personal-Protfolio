@@ -2,8 +2,9 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
-export function About() {
+export  function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -21,44 +22,35 @@ export function About() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left side: profile graphic */}
+          {/* Left side: profile image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-[var(--warm-sand)] to-[var(--espresso-brown)] overflow-hidden shadow-2xl">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-[var(--muted-gold)]/20 flex items-center justify-center">
-                  <span
-                    className="text-6xl text-[var(--deep-chocolate)]"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    PD
-                  </span>
-                </div>
-              </div>
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/profile.jpeg"
+                alt="Profile picture"
+                width={400}
+                height={500}
+                className="object-cover w-full h-full rounded-2xl"
+              />
             </div>
 
             {/* Decorative orbs */}
             <motion.div
               style={{ y }}
               className="absolute -bottom-8 -right-8 w-64 h-64 rounded-full bg-[var(--muted-gold)]/10 -z-10 blur-3xl"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
             <motion.div
               style={{ y: useTransform(scrollYProgress, [0, 1], [-50, 50]) }}
               className="absolute -top-8 -left-8 w-48 h-48 rounded-full bg-[var(--warm-sand)]/10 -z-10 blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.4, 0.2],
-              }}
+              animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
               transition={{ duration: 5, repeat: Infinity, delay: 1 }}
             />
           </motion.div>
@@ -68,7 +60,7 @@ export function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-8"
           >
             <div>

@@ -8,20 +8,20 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "prasiddhi@example.com",
-      href: "mailto:prasiddhi@example.com",
+      value: "dumreprasiddhi@gmail.com",
+      href: "mailto:dumreprasiddhi@gmail.com",
     },
     {
       icon: GitBranchIcon,
       label: "GitHub",
-      value: "github.com/prasiddhi",
-      href: "https://github.com/prasiddhi",
+      value: "github.com/Prasiddhi16",
+      href: "https://github.com/Prasiddhi16",
     },
     {
       icon: LinkIcon,
       label: "LinkedIn",
-      value: "linkedin.com/in/prasiddhi",
-      href: "https://linkedin.com/in/prasiddhi",
+      value: "linkedin.com/in/prasiddhi-dumre",
+      href: "https://www.linkedin.com/in/prasiddhi-dumre/",
     },
   ];
 
@@ -111,7 +111,7 @@ export function Contact() {
         {/* Resume Button */}
         <div className="flex justify-center mt-8">
         <motion.a
-            href="#"
+            href="Prasiddhi_CV.pdf"
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 40 }}
