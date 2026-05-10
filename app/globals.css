@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  /* New maroon + crème palette */
+  --cream-beige: #FFFDD0;      /* Crème */
+  --soft-beige: #FDF5E6;       /* Light crème */
+  --muted-gold: #E6D8AD;       /* Soft accent crème */
+  --warm-sand: #FFEFD5;        /* Pale crème */
+  --deep-chocolate: #800000;   /* Maroon */
+  --espresso-brown: #4B0000;   /* Dark maroon */
+  
+  --font-serif: 'Merriweather', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2A0A0A;   /* Dark maroon background */
+    --foreground: #FFFDD0;   /* Crème text */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
