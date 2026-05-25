@@ -10,9 +10,9 @@ const projects = [
     description:
       "An AI-powered mobile application that classifies waste materials from images and guides users on how to properly sort and dispose of them , making recycling smarter and sustainability easier.",
     tech: ["React Native", "Python", "FastAPI", "JavaScript","TypeScript","Machine Learning","PyTorch"],
-    image: "/wastesort.png", // actual screenshot in public/
-    demo: "https://your-demo-link.com", // replace with live demo URL
-    repo: "https://github.com/your-repo-link", // replace with GitHub repo
+    image: "/wastesort.png", 
+    demo: "https://your-demo-link.com",
+    repo: "https://github.com/your-repo-link", 
   },
   {
     title: "Smart Bus Route Optimizer",
