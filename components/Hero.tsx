@@ -36,13 +36,13 @@ export function Hero() {
         <FloatingIcon Icon={Sparkles} x={400} y={150} delay={2} />
         <FloatingIcon Icon={Star} x={600} y={250} delay={3} />
         <FloatingIcon Icon={Code} x={800} y={400} delay={4} />
-        {/* Extra Floating Icons */}
+      
         <FloatingIcon Icon={Heart} x={950} y={500} delay={1.5} />
         <FloatingIcon Icon={Globe} x={1100} y={350} delay={2.5} />
         <FloatingIcon Icon={Zap} x={1200} y={200} delay={3.5} />
       </div>
 
-      {/* Foreground Content */}
+  
       <motion.div
         style={{ y }}
         className="relative z-10 max-w-6xl mx-auto px-6 text-center"
